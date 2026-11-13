@@ -163,6 +163,7 @@ def reset():
     flash("투표 기록을 초기화했습니다.")
     return redirect("/admin")
 
+setup()
+
 if __name__ == "__main__":
-    setup()
-    app.run(host="0.0.0.0", port=5000, debug=False)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)), debug=False)
